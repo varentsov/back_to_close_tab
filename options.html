@@ -1,0 +1,69 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Back to Close Tab</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 13px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    margin: 0;
+    padding: 18px 20px;
+    min-width: 380px;
+  }
+  h1 { font-size: 15px; margin: 0 0 4px; }
+  p.lede { margin: 0 0 16px; opacity: .7; }
+  label { display: flex; gap: 9px; align-items: flex-start; padding: 7px 0; }
+  input[type=checkbox] { margin: 2px 0 0; }
+  .hint { display: block; opacity: .6; font-size: 12px; }
+  hr { border: 0; border-top: 1px solid rgba(128,128,128,.3); margin: 16px 0; }
+  footer { opacity: .65; font-size: 12px; }
+  code { font-size: 11.5px; background: rgba(128,128,128,.16); padding: 1px 4px; border-radius: 3px; }
+</style>
+
+<h1>Back to Close Tab</h1>
+<p class="lede">Back with nothing left to go back to closes the tab.</p>
+
+<label>
+  <input type="checkbox" id="mouseBack">
+  <span>Mouse back button
+    <span class="hint">Reacts to the back button (button 4) while a page has focus.</span>
+  </span>
+</label>
+
+<label>
+  <input type="checkbox" id="keyBack">
+  <span>In-page <code>⌘[</code> / <code>⌘←</code>
+    <span class="hint">Only fires when the page receives the key; ignored in text fields.</span>
+  </span>
+</label>
+
+<hr>
+
+<label>
+  <input type="checkbox" id="protectPinned">
+  <span>Never close pinned tabs</span>
+</label>
+
+<label>
+  <input type="checkbox" id="keepLastTab">
+  <span>Never close the last tab in a window</span>
+</label>
+
+<label>
+  <input type="checkbox" id="openerOnly">
+  <span>Only close tabs opened from another tab
+    <span class="hint">Leaves tabs you opened yourself alone.</span>
+  </span>
+</label>
+
+<label>
+  <input type="checkbox" id="instantShortcut">
+  <span>Assigned shortcut responds instantly
+    <span class="hint">Turn on only if the key you assigned is <em>not</em> also a Vivaldi
+    shortcut — e.g. a custom combo sent by a remapped mouse button. Removes a ~0.25s delay.</span>
+  </span>
+</label>
+
+<hr>
+<footer>Keyboard shortcut: set it at <code>vivaldi://extensions/shortcuts</code>.</footer>
+
+<script src="options.js"></script>

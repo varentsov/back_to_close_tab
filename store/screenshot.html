@@ -1,0 +1,49 @@
+<!doctype html><meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; width:1280px; height:800px; display:flex; align-items:center; justify-content:center;
+         gap:64px; background:linear-gradient(135deg,#fdf2f0 0%,#f6e9ff 100%);
+         font:16px/1.5 -apple-system,BlinkMacSystemFont,system-ui,sans-serif; color:#1d1d20; }
+  .pitch { max-width:430px; }
+  .icon { width:88px; height:88px; border-radius:20px; margin-bottom:24px; display:block; }
+  h1 { font-size:44px; line-height:1.1; margin:0 0 16px; letter-spacing:-.02em; }
+  p.sub { font-size:21px; line-height:1.45; margin:0 0 28px; color:#4a4a52; }
+  ul { margin:0; padding:0; list-style:none; font-size:17px; color:#3a3a42; }
+  li { padding:7px 0 7px 30px; position:relative; }
+  li:before { content:"→"; position:absolute; left:0; color:#e5482f; font-weight:700; }
+  .panel { width:420px; background:#fff; border-radius:16px; padding:26px 28px;
+           box-shadow:0 18px 50px rgba(30,10,10,.16); }
+  .panel h2 { font-size:16px; margin:0 0 4px; }
+  .panel .lede { margin:0 0 18px; color:#70707a; font-size:13px; }
+  label { display:flex; gap:10px; align-items:flex-start; padding:9px 0; font-size:13.5px; }
+  .box { width:15px; height:15px; border-radius:4px; flex:0 0 auto; margin-top:2px;
+         background:#e5482f; position:relative; }
+  .box.off { background:#fff; border:1.5px solid #c9c9d1; }
+  .box.on:after { content:""; position:absolute; left:4.5px; top:1.5px; width:4px; height:8px;
+                  border:solid #fff; border-width:0 2px 2px 0; transform:rotate(45deg); }
+  .hint { display:block; color:#8a8a94; font-size:12px; margin-top:1px; }
+  hr { border:0; border-top:1px solid #ececf1; margin:14px 0; }
+  code { background:#f1f1f5; padding:1px 5px; border-radius:4px; font-size:12px; }
+</style>
+<div class="pitch">
+  <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAExklEQVR42u2dv4oUQRCH+xH2EfYNfAGDCTUbEEwdMDMyMhPWVDDWB7h8MTVwMxMjMxPZ6PAQZeU4UURZp2RWlr11d2emu/pPfQWVHMfdTPXX3fXrru5xzqOd37pRtT5rfd76ovU17sUXXUwltpVLydoHarqHo6F0XWLexGr0SUfjkoaI7suuLSaaPX5F4JPzVdARof3jU+b1bPKFqe/Gr+n12Y0Gtc8hn6Dm6c3Yxp8RxOx9Rs/HmyFzPoEry+s+2T4JX5mJ4fQUAJB6BUtE5n28ObS8y9BvYyqYIPmQhtcAYGPH0AYScz/ebAPAfr7BeoJtAAiIQd8u4yIgNr0i+7euBpj/jecBLP3q+JcnD9eXZ8//+dcXT9efHtyNvzRM44Tzj3du/m3s31eX6//Zj3dv158f3Y+XCMYIyM8P768FYfXscVGNf3Hv9rX3PGRX87OyARDKD/UEMQmYQFJCz/91cb7ua99evSwTAGn8Uy13COTZ+/T8XZNcoSgAJCDHev6ufX/zOlsA5NnHmIwcRQEgc/4QSyBD7u0yhPswzVEgOABDh8NYSdFQlyTWl2m+e3AAhpoog5w0vk/TfHcAGOkyVfXNcQCgEABE6/tufADIBICxcu+QSeIMAIkDIM8XyjQVEABElHspvDcA9HTZxQtlkk9or38AQCStv89ibIgBQES5t20yshS5G1gCAKEbP8YuIAAkIPdSeE8ACLSXkcvWNwBEknsypchKYvSzAQDgdxs7VbkHAAnJPe2qHwAIVL6Wi9YHAOQeAISq5M29zhEAFLR+ypXOAKAg91IuczcPgBRgWpB7ABBB7sU88wcAypW8qcs9AFCUezmdaTAHwJCjarlrfQBA7gGAj4ObpTW+KQBCa/0cD7OaASBkJa92HT8ADDi+hdwzDEDIoV/zCBcADPRQki83uWcSAJmbQ2X8pdxmVjQAIap7SrnJDAAAgCmAKYAkkCQQGYgMZCGIhSCWglkKZjOIzSC2g9kOpiCEghBKwigJoyiUolDKwikL52AIB0M4GsbRMA6HjoaAw6GJA8DxcC6I4IIIrojhihguieKSKADgmjgA4KJIAOCqWADgsmgA0Fgj4Lr4xAEoXR4CQCIQ8MmYxAHQkId8NCpxAEJXGPPZuAwACC0P+XBkBgCI8+lY4wDw8WjjAGyOnfH5eMMAhJKHAJARACEqjIsCYOg8mVNtve81As13Dw7A0G3VHA9b+pKHmvUCTiNb7jtHplo/p3EAVeoSi1oH6FtmlfslTGPloXa1kNP6RwLBsZGglBu4hlYYx9gVdNqBkZxgt4dI1pv7VSv71gj6jASxkl5XUtBTHAkE+EMjn8Af8wyhALCgsXTWCgSGjcuuYgJKZyEAzGkgsz4XAGYEwqzPBICKQJj1yokRCJvuNkYeYHT+3wKgISDmvHHb1v5gSVDM+NLtGmrAWPa/B4BJ6yuCU7xLG0/cPiMXMDj374GApeFyfeGOWftLU6aCYof+qTvF2l+sCVhxXrs+Rj5gaN4/AAHSsETJx0hAz+8LQU1imF3CVzuf1qkDJGIGUu/kbH/ElMBokGavb5yGdcvGMzaQ0tjY6dpi4mJYNyJQTxBhP1+tx/eAoeponJMveJ/X511sK59t9geXlohvoXDFSgAAAABJRU5ErkJggg==">
+  <h1>Back with nowhere to go closes the tab</h1>
+  <p class="sub">Opened a link in a new tab? Press Back once more and the tab just closes.</p>
+  <ul>
+    <li>Mouse back button, <code>⌘[</code>, <code>⌘←</code> or <code>Alt+←</code></li>
+    <li>Never closes a tab that still has history</li>
+    <li>Pinned tabs protected by default</li>
+    <li>No data collected, no network requests</li>
+  </ul>
+</div>
+<div class="panel">
+  <h2>Back to Close Tab</h2>
+  <p class="lede">Back with nothing left to go back to closes the tab.</p>
+  <label><span class="box on"></span><span>Mouse back button<span class="hint">Reacts to the back button while a page has focus.</span></span></label>
+  <label><span class="box on"></span><span>In-page <code>⌘[</code> / <code>⌘←</code><span class="hint">Ignored in text fields.</span></span></label>
+  <hr>
+  <label><span class="box on"></span><span>Never close pinned tabs</span></label>
+  <label><span class="box off"></span><span>Never close the last tab in a window</span></label>
+  <label><span class="box off"></span><span>Only close tabs opened from another tab</span></label>
+  <label><span class="box off"></span><span>Assigned shortcut responds instantly</span></label>
+</div>

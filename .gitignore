@@ -1,0 +1,5 @@
+# build output — produced by ./build.sh
+dist/
+
+.DS_Store
+node_modules/
