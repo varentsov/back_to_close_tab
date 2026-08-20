@@ -1,0 +1,1 @@
+Stores the user's on/off preferences from the options page (which triggers are active, whether pinned tabs and the last tab are protected). Nothing else is stored, and nothing leaves the browser.

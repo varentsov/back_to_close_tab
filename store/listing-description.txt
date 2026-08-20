@@ -1,0 +1,14 @@
+Open a link in a new tab, read it, press Back — and nothing happens, because there is nowhere to go back to. Back to Close Tab closes the tab instead.
+
+It works with the mouse back button and with ⌘[ / ⌘← (Alt+← on Windows and Linux). You can also assign your own shortcut.
+
+It never closes a tab that still has history. Rather than guessing, it lets the browser navigate first and only steps in when the browser had nowhere to go, so a normal Back keeps working exactly as before.
+
+• Pinned tabs are protected by default
+• Optionally keep the last tab in a window, or only close tabs opened from another tab
+• Closed a tab by accident? ⌘⇧T / Ctrl+Shift+T brings it back
+• No data collected, no network requests, no third-party code
+
+Note: browser extensions cannot see clicks on the toolbar Back button or the trackpad swipe-back gesture — no extension can. Use the mouse back button, ⌘[ / ⌘← / Alt+←, or a shortcut you assign yourself.
+
+Open source: https://github.com/varentsov/back_to_close_tab

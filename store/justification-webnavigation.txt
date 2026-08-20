@@ -1,0 +1,1 @@
+Used to detect whether the browser has itself started a back navigation in that tab. This is what prevents double navigation: if the browser handled the Back gesture, the extension does nothing. Only a single timestamp per tab is kept in memory, and it is discarded when the tab closes. No URLs are read, stored or sent.

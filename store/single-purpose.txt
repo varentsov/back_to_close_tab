@@ -1,0 +1,1 @@
+Close the current tab when the user triggers Back and the tab has no back history remaining.

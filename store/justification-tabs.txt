@@ -1,0 +1,1 @@
+Required to act on the tab the user pressed Back in: chrome.tabs.goBack() to perform the back navigation, and chrome.tabs.remove() to close the tab when there is no back history. It also reads the tab's pinned state and window so the user's "never close pinned tabs" and "never close the last tab in a window" options work.
