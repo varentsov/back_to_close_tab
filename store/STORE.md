@@ -76,12 +76,48 @@ does no harm).
 - [x] Screenshot 1280×800 — `store/screenshot-1280x800.png`
 - [ ] Small promo tile 440×280 — optional, only needed for featuring
 
-## Before you submit
+## URLs for the listing
 
-- [ ] One-time $5 developer registration at the Developer Dashboard
-- [ ] `./build.sh` and upload `dist/back-to-close-tab-<version>.zip`
-- [ ] Bump `version` in `manifest.json` for every subsequent upload — the store
-      rejects a re-used version number
+| Field | Value |
+| --- | --- |
+| Homepage URL | `https://github.com/varentsov/back_to_close_tab` |
+| Support URL | `https://github.com/varentsov/back_to_close_tab/issues` |
+| Privacy policy URL | `https://github.com/varentsov/back_to_close_tab/blob/main/PRIVACY.md` |
+
+## Step by step
+
+**0. Account (one-time)**
+Sign in at the [Developer Dashboard](https://chrome.google.com/webstore/devconsole/),
+pay the one-time $5 registration fee, and verify the contact email — the store
+sends a verification link and you cannot publish until you click it.
+
+**1. Upload**
+`./build.sh`, then **Add new item → Choose file →**
+`dist/back-to-close-tab-<version>.zip` → Upload. Title, summary, icon and
+version are read from the manifest.
+
+**2. Store listing tab**
+Paste the detailed description above. Category **Workflow & Planning**,
+language **English**. Add `store/screenshot-1280x800.png` (at least one
+screenshot is required). Fill the homepage and support URLs from the table.
+
+**3. Privacy tab** — the one that decides how fast review goes
+- *Single purpose*: paste the statement above
+- *Permission justifications*: one box per permission — paste each block above.
+  There is a separate box for host access; use the "Host access" text
+- *Remote code*: **No**
+- *Data usage*: leave every collection category unticked, then tick the three
+  certification checkboxes at the bottom
+
+**4. Distribution tab**
+Visibility **Public**, all regions, free.
+
+**5. Submit for review.**
+
+## Every later update
+
+Bump `version` in `manifest.json` first — the store rejects a re-used version
+number — then `./build.sh` and upload the new zip as a new package.
 
 ## Review expectations
 
