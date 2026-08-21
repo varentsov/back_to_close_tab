@@ -3,3 +3,6 @@ dist/
 
 .DS_Store
 node_modules/
+
+# marketing drafts, not for the public repo
+promo/
